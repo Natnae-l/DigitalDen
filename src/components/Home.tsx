@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <HeaderInfo />
-      <Grid width="90%" margin="0 auto" border="1px solid red" height="100px">
+      <Grid width="90%" margin="0 auto" border="1px solid red">
         <Nav />
       </Grid>
     </>
