@@ -7,8 +7,6 @@ interface Props {
 }
 
 function SelectInfo({ label, value, minWidth }: Props) {
-  console.log(minWidth);
-
   return (
     <FormControl sx={{ m: 1, minWidth: { minWidth } }} size="small">
       <InputLabel sx={{ color: "white", fontSize: ".7rem" }}>
@@ -18,6 +16,7 @@ function SelectInfo({ label, value, minWidth }: Props) {
         labelId="demo-select-small-label"
         id="demo-select-small"
         label="Age"
+        value={value}
         sx={{
           color: "white",
           fontSize: ".7rem",

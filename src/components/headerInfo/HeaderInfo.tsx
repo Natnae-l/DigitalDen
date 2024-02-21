@@ -75,7 +75,7 @@ function HeaderInfo() {
         item
         {...breakPoints}
         container
-        justifyContent={{ xs: "center", sm: "flex-end" }}
+        justifyContent="flex-end"
         paddingRight={4}
         xs={12}
         alignItems="center"
