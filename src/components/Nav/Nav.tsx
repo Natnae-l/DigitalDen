@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CategoryItem from "./components/CategoryItem";
+import { Link } from "react-router-dom";
 
 const useStyles = () => {
   return {
@@ -15,7 +16,8 @@ const useStyles = () => {
     },
     tool: {
       display: "flex",
-      justifyContent: "space-between",
+      // justifyContent: "space-between",
+      gap: "10px",
     },
   };
 };
@@ -32,8 +34,13 @@ export default function Nav() {
             ShopCart
           </Typography>
         </Box>
-
         <CategoryItem />
+        <Link to="/" style={{ textDecoration: "none" }} className="green">
+          <Typography>Deals</Typography>{" "}
+        </Link>
+        <Link to="/" style={{ textDecoration: "none" }} className="green">
+          <Typography>What's new</Typography>{" "}
+        </Link>
       </Toolbar>
     </AppBar>
   );
