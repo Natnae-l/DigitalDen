@@ -7,9 +7,15 @@ body {
   font-family: Poppins, sans-serif !important;
 }
 .green {
-  color: #1b1e10;
+  color: #1b3e25;
+}
+.greener {
+  color: #255428;
 }
 .transparent {
   background-color: transparent;
   color: transparent;
+}
+.name {
+  background-color: rgb(248, 230, 206);
 }
