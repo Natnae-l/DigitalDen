@@ -3,6 +3,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CategoryItem from "./components/CategoryItem";
 import { Link } from "react-router-dom";
+import SearchBar from "./components/SearchBar";
 
 const useStyles = () => {
   return {
@@ -17,7 +18,7 @@ const useStyles = () => {
     tool: {
       display: "flex",
       // justifyContent: "space-between",
-      gap: "10px",
+      gap: "15px",
     },
   };
 };
@@ -41,6 +42,7 @@ export default function Nav() {
         <Link to="/" style={{ textDecoration: "none" }} className="green">
           <Typography>What's new</Typography>{" "}
         </Link>
+        <SearchBar />
       </Toolbar>
     </AppBar>
   );
