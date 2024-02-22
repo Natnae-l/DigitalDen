@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import CategoryItem from "./components/CategoryItem";
 import { Link } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
+import Account from "./components/Account";
 
 const useStyles = () => {
   return {
@@ -17,8 +18,8 @@ const useStyles = () => {
     },
     tool: {
       display: "flex",
-      // justifyContent: "space-between",
-      gap: "15px",
+      justifyContent: "space-between",
+      // gap: "15px",
     },
   };
 };
@@ -40,9 +41,10 @@ export default function Nav() {
           <Typography>Deals</Typography>{" "}
         </Link>
         <Link to="/" style={{ textDecoration: "none" }} className="green">
-          <Typography>What's new</Typography>{" "}
+          <Typography>What's new</Typography>
         </Link>
         <SearchBar />
+        <Account />
       </Toolbar>
     </AppBar>
   );
