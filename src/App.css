@@ -6,3 +6,10 @@ body {
 * {
   font-family: Poppins, sans-serif !important;
 }
+.green {
+  color: #1b1e10;
+}
+.transparent {
+  background-color: transparent;
+  color: transparent;
+}
