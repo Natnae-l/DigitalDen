@@ -1,3 +1,4 @@
+import { Rotate90DegreesCcw } from "@mui/icons-material";
 import { Button, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -42,7 +43,13 @@ function Advert() {
           </Link>
         </div>
       </Grid>
-      <Grid item xs={6}></Grid>
+      <Grid item container xs={6} justifyContent="center">
+        <img
+          src="/headphones-375341_640.png"
+          alt=""
+          style={{ width: "130px", transform: "rotate(2deg)" }}
+        />
+      </Grid>
     </Grid>
   );
 }
