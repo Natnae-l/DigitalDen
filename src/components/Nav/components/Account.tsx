@@ -9,13 +9,17 @@ function Account() {
       <Link to="/" style={{ textDecoration: "none" }}>
         <Box display="flex" gap={0}>
           <PersonOutlinedIcon sx={{ color: "black" }} />
-          <Typography sx={{ color: "black" }}>Account</Typography>
+          <Typography sx={{ color: "black", fontFamily: "Anta !important" }}>
+            Account
+          </Typography>
         </Box>
       </Link>
       <Link to="/" style={{ textDecoration: "none" }}>
         <Box display="flex" gap={0}>
           <ShoppingCartOutlinedIcon sx={{ color: "black" }} />
-          <Typography sx={{ color: "black" }}>Cart</Typography>
+          <Typography sx={{ color: "black", fontFamily: "Anta !important" }}>
+            Cart
+          </Typography>
         </Box>
       </Link>
     </Box>
