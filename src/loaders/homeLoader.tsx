@@ -17,7 +17,7 @@ async function homeLoader() {
   let response = await fetch("https://digitalden-backend.onrender.com/");
   let data: Category = await response.json();
 
-  return response;
+  return data;
 }
 
 export default homeLoader;
