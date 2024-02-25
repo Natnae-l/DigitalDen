@@ -2,9 +2,10 @@ import { Box, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CategoryItem from "./components/CategoryItem";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import Account from "./components/Account";
+import { Category } from "../../loaders/homeLoader";
 
 const useStyles = () => {
   return {
@@ -26,6 +27,7 @@ const useStyles = () => {
 
 export default function Nav() {
   const styles = useStyles();
+  const { Category } = useLoaderData() as Category;
 
   return (
     <AppBar position="static" color="inherit" elevation={0}>
@@ -36,7 +38,7 @@ export default function Nav() {
             ShopCart
           </Typography>
         </Box>
-        <CategoryItem />
+        <CategoryItem categoryName="Category" categories={Category} />
         <Link to="/" style={{ textDecoration: "none" }} className="green">
           <Typography>Deals</Typography>{" "}
         </Link>

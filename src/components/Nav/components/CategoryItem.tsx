@@ -10,20 +10,29 @@ import { Option as BaseOption, optionClasses } from "@mui/base/Option";
 import { styled } from "@mui/system";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-export default function UnstyledSelectCustomRenderValue() {
+interface Props {
+  categories: string[];
+  categoryName: string;
+}
+
+export default function UnstyledSelectCustomRenderValue({
+  categories,
+  categoryName,
+}: Props) {
   return (
     <Select
       renderValue={(option: SelectOption<number> | null) => {
         if (option == null || option.value === 0) {
-          return "Category";
+          return categoryName;
         }
-        return `(${option.value})`;
+        return `${option.value}`;
       }}
     >
-      <Option value={0}>None</Option>
-      <Option value={10}>Ten</Option>
-      <Option value={20}>Twenty</Option>
-      <Option value={30}>Thirty</Option>
+      {categories.map((category, index) => (
+        <Option value={category} key={index}>
+          {category}
+        </Option>
+      ))}
     </Select>
   );
 }
@@ -73,7 +82,7 @@ const Button = React.forwardRef(function Button<
   return (
     <StyledButton type="button" {...other} ref={ref}>
       {other.children}
-      <KeyboardArrowDownIcon />
+      <KeyboardArrowDownIcon style={{ marginLeft: "100px" }} />
     </StyledButton>
   );
 });
@@ -84,7 +93,7 @@ const StyledButton = styled("button", { shouldForwardProp: () => true })(
   font-size: 1rem;
   box-sizing: border-box;
   font-weight: 400;
-  min-width: 118px;
+  min-width: 120px;
   padding: 8px 12px;
   border-radius: 8px;
   text-align: left;
@@ -93,7 +102,8 @@ const StyledButton = styled("button", { shouldForwardProp: () => true })(
   border: 1px solid transparent;
   color: #1b1e10;
   position: relative;
-
+  display: flex;
+  gap: 200px;
   
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
