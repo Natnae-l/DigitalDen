@@ -29,7 +29,7 @@ function Advert() {
     <Grid className="name" container {...styles.mainGrid}>
       <Grid item xs={5} flexDirection="column" gap={4}>
         <Typography variant="h4" className="green" {...styles.typo}>
-          Grab upto 50% off On Selected Head Phones
+          Grab Upto 50% Off On Selected Headphone
         </Typography>
         <div>
           <Link to="/" style={{ textDecoration: "none" }}>

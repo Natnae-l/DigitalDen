@@ -15,7 +15,7 @@ function SearchBar() {
     >
       <TextField
         size="small"
-        placeholder="Here"
+        placeholder="Search Product"
         sx={{
           borderRadius: "1rem", // Apply border-radius to the text field
           "& .MuiInputBase-input": {

@@ -25,7 +25,7 @@ export default function UnstyledSelectCustomRenderValue({
         if (option == null || option.value === 0) {
           return categoryName;
         }
-        return `${option.value}`;
+        return `${option.value.toString().substring(0, 8)}`;
       }}
     >
       {categories.map((category, index) => (

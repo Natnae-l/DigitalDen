@@ -43,7 +43,7 @@ export default function Nav() {
           <Typography>Deals</Typography>{" "}
         </Link>
         <Link to="/" style={{ textDecoration: "none" }} className="green">
-          <Typography>What's new</Typography>
+          <Typography>What's New</Typography>
         </Link>
         <SearchBar />
         <Account />
