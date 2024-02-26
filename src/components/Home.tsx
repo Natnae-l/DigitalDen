@@ -4,6 +4,7 @@ import Nav from "./Nav/Nav";
 import Advert from "./Advert/Advert";
 import UserContextProvider from "../context/Category/categoryContext";
 import Filter from "../components/Filter/Filter";
+import Items from "./Items/Items";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
           <Nav />
           <Advert />
           <Filter />
+          <Items />
         </Grid>
       </UserContextProvider>
     </>
