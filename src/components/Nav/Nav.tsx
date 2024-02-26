@@ -45,6 +45,7 @@ export default function Nav() {
           categoryName="Category"
           categories={Category}
           setSelectedContext={setCategory}
+          sizeCate="md"
         />
         <Link to="/" style={{ textDecoration: "none" }} className="green">
           <Typography>Deals</Typography>{" "}

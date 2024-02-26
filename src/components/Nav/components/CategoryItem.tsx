@@ -5,20 +5,25 @@ interface Props {
   categories: string[];
   categoryName: string;
   setSelectedContext: (selected: string) => void;
+  variant?: boolean;
+  sizeCate: "sm" | "md" | "lg";
 }
 
 export default function UnstyledSelectCustomRenderValue({
   categories,
   categoryName,
   setSelectedContext,
+  variant = false,
+  sizeCate,
 }: Props) {
   return (
     <Select
       placeholder={categoryName}
-      variant="plain"
+      variant={variant ? "soft" : "plain"}
       indicator={<KeyboardArrowDown />}
       sx={{
         minWidth: 120,
+        borderRadius: 18,
         [`& .${selectClasses.indicator}`]: {
           transition: "0.2s",
           [`&.${selectClasses.expanded}`]: {
@@ -26,6 +31,7 @@ export default function UnstyledSelectCustomRenderValue({
           },
         },
       }}
+      size={sizeCate}
     >
       {categories.map((category) => (
         <Option
