@@ -10,10 +10,7 @@ import homeLoader from "./loaders/homeLoader";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
-      <Route path="/" element={<Home />} loader={homeLoader}></Route>
-      <Route path="*" element={<Home />} />
-    </Route>
+    <Route path="/" element={<Home />} loader={homeLoader}></Route>
   )
 );
 
