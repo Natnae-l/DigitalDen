@@ -24,6 +24,10 @@ const useStyle = () => {
 };
 
 function Advert() {
+  // const { category, setCategory }: CategoryContextType = useContext(
+  //   CategoryContext
+  // ) || { category: undefined, setCategory: () => {} };
+
   const styles = useStyle();
   return (
     <Grid className="name" container {...styles.mainGrid}>
