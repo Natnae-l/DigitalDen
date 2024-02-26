@@ -19,3 +19,16 @@ body {
 .name {
   background-color: rgb(255, 241, 224);
 }
+.col {
+  color: rgb(116, 115, 115) !important;
+}
+.sort {
+  background-color: transparent !important;
+  border: 1.33px solid rgb(189, 189, 189) !important;
+  min-width: 40px !important;
+  font-weight: 700 !important;
+}
+
+.weight * {
+  font-weight: 500 !important;
+}

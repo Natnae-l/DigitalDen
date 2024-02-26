@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useLoaderData } from "react-router-dom";
 import { Category } from "../../loaders/homeLoader";
 import { CategoryContext } from "../../context/Category/categoryContext";
@@ -9,8 +9,8 @@ function Filter() {
   const { Category } = useLoaderData() as Category;
   const { setCategory } = useContext(CategoryContext);
   return (
-    <Grid container marginBlock={4}>
-      <Grid item xs={7}>
+    <Grid container marginBlock={4} className="weight">
+      <Grid item xs={6}>
         <Box display="flex" justifyContent="space-between" alignItems="center">
           {[1, 2, 3, 4].map((item) => {
             return (
@@ -26,11 +26,16 @@ function Filter() {
           })}
         </Box>
       </Grid>
-      <Grid item xs={5}>
+      <Grid item xs={6}>
         <Box display="flex" justifyContent="flex-end" alignItems="center">
-          <Typography variant="h5" color="secondary">
-            Product
-          </Typography>
+          <CategoryItem
+            categoryName="Sort By"
+            categories={["price", "review", "offer"]}
+            setSelectedContext={setCategory}
+            variant={true}
+            sizeCate="sm"
+            compType="sort"
+          />
         </Box>
       </Grid>
     </Grid>
