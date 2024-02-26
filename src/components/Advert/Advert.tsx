@@ -1,5 +1,10 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import {
+  CategoryContext,
+  CategoryContextType,
+} from "../../context/Category/categoryContext";
+import { useContext } from "react";
 
 const useStyle = () => {
   return {
@@ -24,9 +29,8 @@ const useStyle = () => {
 };
 
 function Advert() {
-  // const { category, setCategory }: CategoryContextType = useContext(
-  //   CategoryContext
-  // ) || { category: undefined, setCategory: () => {} };
+  const { category }: CategoryContextType = useContext(CategoryContext);
+  console.log(category);
 
   const styles = useStyle();
   return (

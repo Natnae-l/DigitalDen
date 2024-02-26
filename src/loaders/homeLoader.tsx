@@ -19,7 +19,6 @@ async function homeLoader() {
     "https://digitalden-backend.onrender.com/categories"
   );
   let data: Category = await response.json();
-  console.log(data);
 
   return data;
 }

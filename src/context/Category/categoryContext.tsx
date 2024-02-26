@@ -1,13 +1,14 @@
 import { ReactNode, createContext, useState } from "react";
 
 export type CategoryContextType = {
-  category: string | undefined;
-  setCategory: React.Dispatch<React.SetStateAction<string | undefined>>;
+  category: string;
+  setCategory: (category: string) => void;
 };
 
-export const CategoryContext = createContext<CategoryContextType | undefined>(
-  undefined
-);
+export const CategoryContext = createContext<CategoryContextType>({
+  category: "",
+  setCategory: () => {},
+});
 
 type CategoryContextProviderProps = {
   children: ReactNode;
@@ -16,7 +17,7 @@ type CategoryContextProviderProps = {
 const CategoryContextProvider = ({
   children,
 }: CategoryContextProviderProps) => {
-  const [category, setCategory] = useState<string | undefined>(undefined);
+  const [category, setCategory] = useState<string>("");
   return (
     <CategoryContext.Provider value={{ category, setCategory }}>
       {children}
