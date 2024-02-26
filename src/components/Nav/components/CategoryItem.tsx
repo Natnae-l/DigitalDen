@@ -18,7 +18,7 @@ export default function UnstyledSelectCustomRenderValue({
       variant="plain"
       indicator={<KeyboardArrowDown />}
       sx={{
-        minWidth: 150,
+        minWidth: 120,
         [`& .${selectClasses.indicator}`]: {
           transition: "0.2s",
           [`&.${selectClasses.expanded}`]: {
