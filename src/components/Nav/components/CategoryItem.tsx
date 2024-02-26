@@ -1,5 +1,4 @@
 import { Option, Select, selectClasses } from "@mui/joy";
-// import { useState } from "react";
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 
 interface Props {
@@ -19,7 +18,7 @@ export default function UnstyledSelectCustomRenderValue({
       variant="plain"
       indicator={<KeyboardArrowDown />}
       sx={{
-        width: 140,
+        minWidth: 150,
         [`& .${selectClasses.indicator}`]: {
           transition: "0.2s",
           [`&.${selectClasses.expanded}`]: {
