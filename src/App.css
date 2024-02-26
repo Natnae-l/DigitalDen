@@ -32,3 +32,8 @@ body {
 .weight * {
   font-weight: 500 !important;
 }
+
+.material {
+  color: #1b3e25 !important;
+  font-size: 0.86rem !important;
+}

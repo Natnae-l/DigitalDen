@@ -1,10 +1,21 @@
-import { Grid } from "@mui/material";
-import Card from "./components/Card";
+import { Grid, Typography } from "@mui/material";
+import CardComponent from "./components/Card";
 
 function Items() {
   return (
     <Grid container>
-      <Card />
+      <Typography
+        variant="h5"
+        sx={{
+          color: "black",
+          fontWeight: 600,
+          width: "100%",
+          marginBlock: 3,
+        }}
+      >
+        HeadPhones for you!
+      </Typography>
+      <CardComponent />
     </Grid>
   );
 }
