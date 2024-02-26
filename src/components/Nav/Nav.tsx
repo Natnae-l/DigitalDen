@@ -6,6 +6,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import Account from "./components/Account";
 import { Category } from "../../loaders/homeLoader";
+import { useContext } from "react";
+import { CategoryContext } from "../../context/Category/categoryContext";
 
 const useStyles = () => {
   return {
@@ -28,6 +30,7 @@ const useStyles = () => {
 export default function Nav() {
   const styles = useStyles();
   const { Category } = useLoaderData() as Category;
+  const { setCategory } = useContext(CategoryContext);
 
   return (
     <AppBar position="static" color="inherit" elevation={0}>
@@ -38,7 +41,11 @@ export default function Nav() {
             ShopCart
           </Typography>
         </Box>
-        <CategoryItem categoryName="Category" categories={Category} />
+        <CategoryItem
+          categoryName="Category"
+          categories={Category}
+          setSelectedContext={setCategory}
+        />
         <Link to="/" style={{ textDecoration: "none" }} className="green">
           <Typography>Deals</Typography>{" "}
         </Link>
