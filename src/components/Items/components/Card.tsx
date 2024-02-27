@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -8,21 +7,17 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import Rating from "./Rating";
-import LikeButton from "./LikeButton";
+import Rating from "./Components/Rating";
+import LikeButton from "./Components/LikeButton";
+import AddToCart from "./Components/AddToCart";
 function CardComponent() {
+  const customStyle = useStyle();
+
   return [1, 2, 3, 4].map((item) => {
     return (
       <Grid item lg={2.835} sm={6} xs={12}>
         {" "}
-        <Card
-          key={item}
-          sx={{
-            minHeight: 250,
-            padding: 0,
-            boxShadow: 0,
-          }}
-        >
+        <Card key={item} sx={{ ...customStyle.card }}>
           <CardMedia image="https://res.cloudinary.com/dbkumr8wm/image/upload/v1708857468/nzil4sgvpar75gh7vxaq.jpg">
             <CardContent
               sx={{
@@ -69,22 +64,7 @@ function CardComponent() {
               }}
             >
               <Rating />
-              <Button
-                sx={{
-                  color: "white",
-                  borderRadius: "1.5rem",
-                  padding: "10px 20px",
-                  textTransform: "none",
-                }}
-                className="card-button"
-                style={{
-                  color: "#1b3e25",
-                  border: "1.4px solid #1b3e25",
-                  margin: "10px 0 0 0",
-                }}
-              >
-                Add to Cart
-              </Button>
+              <AddToCart />
             </CardActions>
           </CardContent>
         </Card>
@@ -94,3 +74,13 @@ function CardComponent() {
 }
 
 export default CardComponent;
+
+const useStyle = () => {
+  return {
+    card: {
+      minHeight: 250,
+      padding: 0,
+      boxShadow: 0,
+    },
+  };
+};

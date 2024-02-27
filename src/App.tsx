@@ -12,7 +12,12 @@ import Error from "./components/Error";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route index element={<Home />} loader={homeLoader} />
+      <Route
+        index
+        element={<Home />}
+        loader={homeLoader}
+        errorElement={<Error />}
+      />
       <Route path="*" element={<Error />} />
     </Route>
   )
