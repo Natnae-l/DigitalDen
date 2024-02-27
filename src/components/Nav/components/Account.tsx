@@ -9,7 +9,14 @@ function Account() {
       <Link to="/" style={{ textDecoration: "none" }}>
         <Box display="flex" gap={0}>
           <PersonOutlinedIcon sx={{ color: "black" }} />
-          <Typography sx={{ color: "black", fontFamily: "Anta !important" }}>
+          <Typography
+            sx={{
+              color: "black",
+              fontFamily: "Poppins !important",
+              fontSize: ".86rem",
+            }}
+            className="base"
+          >
             Account
           </Typography>
         </Box>
@@ -17,7 +24,14 @@ function Account() {
       <Link to="/" style={{ textDecoration: "none" }}>
         <Box display="flex" gap={0}>
           <ShoppingCartOutlinedIcon sx={{ color: "black" }} />
-          <Typography sx={{ color: "black", fontFamily: "Anta !important" }}>
+          <Typography
+            sx={{
+              color: "black",
+              fontFamily: "Poppins !important",
+              fontSize: ".86rem",
+            }}
+            className="base"
+          >
             Cart
           </Typography>
         </Box>

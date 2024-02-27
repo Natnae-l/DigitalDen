@@ -45,6 +45,11 @@ body {
 .MuiRating-iconFilled {
   /* color: #008e29 !important; */
   color: green !important;
+  /* vertical-align: ; */
+}
+.base {
+  display: flex !important;
+  align-items: flex-end !important;
 }
 .doneIcon {
   color: #065e1f !important;

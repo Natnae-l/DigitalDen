@@ -31,7 +31,7 @@ const useStyle = () => {
       height: "20px",
     },
     liked: {
-      color: "green",
+      color: "red",
       width: "20px",
       height: "20px",
     },
