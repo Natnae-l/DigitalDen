@@ -1,16 +1,3 @@
-// interface headPhone {
-//   id: string;
-//   name: string;
-//   description: string;
-//   category: string;
-//   price: number;
-//   rating: number;
-//   image: string;
-// }
-// interface HeadPhones {
-//   headPhones: headPhone[];
-
-// }
 export interface Category {
   Category: string[];
 }

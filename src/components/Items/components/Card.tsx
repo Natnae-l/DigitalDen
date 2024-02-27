@@ -10,6 +10,16 @@ import Rating from "./Components/Rating";
 import LikeButton from "./Components/LikeButton";
 import AddToCart from "./Components/AddToCart";
 
+export interface headPhone {
+  id: string;
+  name: string;
+  material: string;
+  category: string;
+  price: number;
+  rating: number;
+  image: string;
+}
+
 function CardComponent() {
   const customStyle = useStyle();
 
