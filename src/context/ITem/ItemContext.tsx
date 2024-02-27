@@ -1,8 +1,9 @@
 import { ReactNode, createContext, useState } from "react";
+import { headPhone } from "../../components/Items/components/Card";
 
 export type ItemContextType = {
-  headPhones: string[];
-  setHeadPhones: (headPhone: string[]) => void;
+  headPhones: headPhone[];
+  setHeadPhones: (headPhone: headPhone[]) => void;
 };
 
 export const ItemContext = createContext<ItemContextType>({
@@ -15,7 +16,7 @@ type ItemContextProviderProps = {
 };
 
 const ItemContextProvider = ({ children }: ItemContextProviderProps) => {
-  const [headPhones, setHeadPhones] = useState<string[]>([]);
+  const [headPhones, setHeadPhones] = useState<headPhone[]>([]);
   return (
     <ItemContext.Provider value={{ headPhones, setHeadPhones }}>
       {children}

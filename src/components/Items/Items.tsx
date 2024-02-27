@@ -1,9 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import CardComponent, { headPhone } from "./components/Card";
-
-interface HeadPhones {
-  headPhones: headPhone[];
-}
+import CardComponent from "./components/Card";
 
 function Items() {
   return (
