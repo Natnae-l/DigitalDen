@@ -1,7 +1,17 @@
 import { Grid, Typography } from "@mui/material";
 import CardComponent from "./components/Card";
+import ItemReducer from "../../reducers/ItemReducer";
 
 function Items() {
+  const { error, isLoading } = ItemReducer();
+  if (isLoading) return <div style={{ color: "black" }}>IsLoading</div>;
+  if (error)
+    return (
+      <div style={{ color: "black" }}>
+        error happend, Please check your internet connection
+      </div>
+    );
+
   return (
     <Grid container>
       <Typography

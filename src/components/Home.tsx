@@ -5,18 +5,21 @@ import Advert from "./Advert/Advert";
 import UserContextProvider from "../context/Category/categoryContext";
 import Filter from "../components/Filter/Filter";
 import Items from "./Items/Items";
+import ItemContextProvider from "../context/Item/ItemContext";
 
 function Home() {
   return (
     <>
       <UserContextProvider>
-        <HeaderInfo />
-        <Grid width="85%" margin="0 auto">
-          <Nav />
-          <Advert />
-          <Filter />
-          <Items />
-        </Grid>
+        <ItemContextProvider>
+          <HeaderInfo />
+          <Grid width="85%" margin="0 auto">
+            <Nav />
+            <Advert />
+            <Filter />
+            <Items />
+          </Grid>
+        </ItemContextProvider>
       </UserContextProvider>
     </>
   );
