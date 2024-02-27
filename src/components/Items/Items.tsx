@@ -15,7 +15,9 @@ function Items() {
       >
         HeadPhones for you!
       </Typography>
-      <CardComponent />
+      <Grid container gap={2.4}>
+        <CardComponent />
+      </Grid>
     </Grid>
   );
 }
