@@ -16,7 +16,11 @@ function Items() {
         HeadPhones for you!
       </Typography>
       <Grid container gap={2.4}>
-        <CardComponent />
+        {[1, 2, 3, 4].map((item) => (
+          <Grid key={item} item lg={2.835} sm={6} xs={12}>
+            <CardComponent />
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );

@@ -37,7 +37,8 @@ body {
   background-color: #1b3e25 !important;
 }
 .material {
-  color: #1b3e25 !important;
+  /* color: #1b3e25 !important; */
+  opacity: 0.8;
   font-size: 0.86rem !important;
 }
 

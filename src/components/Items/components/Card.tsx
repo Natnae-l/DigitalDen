@@ -4,7 +4,6 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Grid,
   Typography,
 } from "@mui/material";
 import Rating from "./Components/Rating";
@@ -14,36 +13,32 @@ import AddToCart from "./Components/AddToCart";
 function CardComponent() {
   const customStyle = useStyle();
 
-  return [1, 2, 3, 4].map((item) => {
-    return (
-      <Grid item lg={2.835} sm={6} xs={12}>
-        {" "}
-        <Card key={item} sx={{ ...customStyle.card }}>
-          <CardMedia image="https://res.cloudinary.com/dbkumr8wm/image/upload/v1708857468/nzil4sgvpar75gh7vxaq.jpg">
-            <CardContent sx={{ ...customStyle.cardContentMedia }}>
-              <LikeButton />
-            </CardContent>
-          </CardMedia>
-          <CardContent sx={{ ...customStyle.cardContent }}>
-            <Box style={{ ...customStyle.itemName }}>
-              <Typography fontWeight={600}>AirPods Max</Typography>
-              <Typography fontWeight={600}>
-                <span style={{ ...customStyle.currency }}>$</span>
-                559.00
-              </Typography>
-            </Box>
-            <Typography className="material">
-              Organic cotton, fair trade certified{" "}
-            </Typography>
-            <CardActions sx={{ ...customStyle.action }}>
-              <Rating />
-              <AddToCart />
-            </CardActions>
-          </CardContent>
-        </Card>
-      </Grid>
-    );
-  });
+  return (
+    <Card sx={{ ...customStyle.card }}>
+      <CardMedia image="https://res.cloudinary.com/dbkumr8wm/image/upload/v1708857468/nzil4sgvpar75gh7vxaq.jpg">
+        <CardContent sx={{ ...customStyle.cardContentMedia }}>
+          <LikeButton />
+        </CardContent>
+      </CardMedia>
+      <CardContent sx={{ ...customStyle.cardContent }}>
+        <Box style={{ ...customStyle.itemName }}>
+          <Typography fontWeight={600}>AirPods Max</Typography>
+          <Typography fontWeight={600}>
+            <span style={{ ...customStyle.currency }}>$</span>
+            559
+            <span style={{ ...customStyle.currency }}>.78</span>
+          </Typography>
+        </Box>
+        <Typography className="material">
+          Organic cotton, fair trade certified{" "}
+        </Typography>
+        <CardActions sx={{ ...customStyle.action }}>
+          <Rating />
+          <AddToCart />
+        </CardActions>
+      </CardContent>
+    </Card>
+  );
 }
 
 export default CardComponent;
@@ -83,7 +78,7 @@ const useStyle = () => {
       justifyContent: "flex-start",
     },
     currency: {
-      fontSize: "13px",
+      fontSize: "11px",
       verticalAlign: "top",
     },
   };
