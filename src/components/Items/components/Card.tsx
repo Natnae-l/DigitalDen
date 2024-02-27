@@ -13,7 +13,7 @@ import LikeButton from "./LikeButton";
 function CardComponent() {
   return [1, 2, 3, 4].map((item) => {
     return (
-      <Grid item xs={2.835}>
+      <Grid item lg={2.835} sm={6} xs={12}>
         {" "}
         <Card
           key={item}

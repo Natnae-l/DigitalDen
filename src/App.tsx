@@ -7,10 +7,14 @@ import {
 import "./App.css";
 import Home from "./components/Home";
 import homeLoader from "./loaders/homeLoader";
+import Error from "./components/Error";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Home />} loader={homeLoader}></Route>
+    <Route>
+      <Route index element={<Home />} loader={homeLoader} />
+      <Route path="*" element={<Error />} />
+    </Route>
   )
 );
 

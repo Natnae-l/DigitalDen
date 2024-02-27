@@ -9,18 +9,28 @@
 // }
 // interface HeadPhones {
 //   headPhones: headPhone[];
+
+import { useNavigate } from "react-router-dom";
+
 // }
 export interface Category {
   Category: string[];
 }
 
 async function homeLoader() {
-  let response = await fetch(
-    "https://digitalden-backend.onrender.com/categories"
-  );
-  let data: Category = await response.json();
+  let navigate = useNavigate();
+  try {
+    let response = await fetch(
+      "https://digitalden-backend.onrender.com/categories"
+    );
+    let data: Category = await response.json();
 
-  return data;
+    return data;
+  } catch (error) {
+    console.log(error);
+
+    return navigate("*");
+  }
 }
 
 export default homeLoader;
