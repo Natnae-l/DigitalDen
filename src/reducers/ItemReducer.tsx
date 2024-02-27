@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ItemContext } from "../context/Item/ItemContext";
 
 function ItemReducer() {
@@ -7,17 +7,19 @@ function ItemReducer() {
 
   const { setHeadPhones } = useContext(ItemContext);
 
-  fetch("https://digitalden-backend.onrender.com")
-    .then((res) => res.json())
-    .then((data) => {
-      setHeadPhones(data);
-      setIsLoading(false);
-    })
-    .catch((err) => {
-      if (!err) return;
-      setIsLoading(false);
-      setError(true);
-    });
+  useEffect(() => {
+    fetch("https://digitalden-backend.onrender.com")
+      .then((res) => res.json())
+      .then((data) => {
+        setHeadPhones(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        if (!err) return;
+        setIsLoading(false);
+        setError(true);
+      });
+  }, []);
 
   return {
     error,
