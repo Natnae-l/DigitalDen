@@ -1,9 +1,13 @@
 import { Grid, Typography } from "@mui/material";
 import CardComponent from "./components/Card";
 import ItemReducer from "../../reducers/ItemReducer";
+import { useContext } from "react";
+import { ItemContext } from "../../context/Item/ItemContext";
 
 function Items() {
   const { error, isLoading } = ItemReducer();
+  const { headPhones } = useContext(ItemContext);
+
   if (isLoading) return <div style={{ color: "black" }}>IsLoading</div>;
   if (error)
     return (
@@ -26,9 +30,14 @@ function Items() {
         HeadPhones for you!
       </Typography>
       <Grid container gap={2.4}>
-        {[1, 2, 3, 4].map((item) => (
-          <Grid key={item} item lg={2.835} sm={6} xs={12}>
-            <CardComponent />
+        {headPhones.map((item, index) => (
+          <Grid key={index} item lg={2.835} sm={6} xs={12}>
+            <CardComponent
+              name={item.name}
+              price={item.price}
+              description={item.description}
+              image={item.image}
+            />
           </Grid>
         ))}
       </Grid>

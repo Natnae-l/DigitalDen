@@ -11,37 +11,36 @@ import LikeButton from "./Components/LikeButton";
 import AddToCart from "./Components/AddToCart";
 
 export interface headPhone {
-  id: string;
+  // id: string;
   name: string;
-  material: string;
-  category: string;
+  // material: string;
+  description: string;
+  // category: string;
   price: number;
-  rating: number;
+  // rating: number;
   image: string;
 }
 
-function CardComponent() {
+function CardComponent({ name, price, description, image }: headPhone) {
   const customStyle = useStyle();
 
   return (
     <Card sx={{ ...customStyle.card }}>
-      <CardMedia image="https://res.cloudinary.com/dbkumr8wm/image/upload/v1708857468/nzil4sgvpar75gh7vxaq.jpg">
+      <CardMedia image={image}>
         <CardContent sx={{ ...customStyle.cardContentMedia }}>
           <LikeButton />
         </CardContent>
       </CardMedia>
       <CardContent sx={{ ...customStyle.cardContent }}>
         <Box style={{ ...customStyle.itemName }}>
-          <Typography fontWeight={600}>AirPods Max</Typography>
+          <Typography fontWeight={600}>{name}</Typography>
           <Typography fontWeight={600}>
             <span style={{ ...customStyle.currency }}>$</span>
-            559
+            {price}
             <span style={{ ...customStyle.currency }}>.78</span>
           </Typography>
         </Box>
-        <Typography className="material">
-          Organic cotton, fair trade certified{" "}
-        </Typography>
+        <Typography className="material">{description}</Typography>
         <CardActions sx={{ ...customStyle.action }}>
           <Rating />
           <AddToCart />
