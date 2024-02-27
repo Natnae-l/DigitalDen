@@ -45,3 +45,10 @@ body {
   /* color: #008e29 !important; */
   color: green !important;
 }
+.doneIcon {
+  color: #065e1f !important;
+  font-size: 18px !important;
+}
+.card-button:hover .doneIcon {
+  color: white !important;
+}
