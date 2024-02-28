@@ -23,8 +23,13 @@ function Account() {
       </Link>
       <Link to="/" style={{ textDecoration: "none" }}>
         <Box display="flex" gap={0}>
-          <Badge badgeContent={5} sx={{ marginInlineEnd: 0.6 }}>
-            <MdOutlineAddShoppingCart size={20} color="black" />
+          <Badge
+            badgeContent={5}
+            sx={{ marginInlineEnd: 0.9 }}
+            className="badge"
+            color="secondary"
+          >
+            <MdOutlineAddShoppingCart size={24} color="black" />
           </Badge>
 
           <Typography

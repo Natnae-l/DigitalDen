@@ -23,7 +23,7 @@ export default function UnstyledSelectCustomRenderValue({
       defaultValue={categoryName}
       variant={variant ? "soft" : "plain"}
       indicator={<KeyboardArrowDown color="success" className="col" />}
-      className={compType}
+      className={`${compType} green`}
       sx={{
         minWidth: 110,
         borderRadius: 18,

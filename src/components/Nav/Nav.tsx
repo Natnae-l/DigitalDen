@@ -15,7 +15,8 @@ const useStyles = () => {
       width: "35px",
     },
     shop: {
-      fontWeight: 600,
+      fontWeight: "600 !important",
+      fontSize: "1.8rem !important",
       color: "#1b1e10",
       fontFamily: "Anta, sans-serif !important",
     },
@@ -33,7 +34,12 @@ export default function Nav() {
   const { setCategory } = useContext(CategoryContext);
 
   return (
-    <AppBar position="static" color="inherit" elevation={0}>
+    <AppBar
+      position="static"
+      color="inherit"
+      elevation={0}
+      className="weight-first"
+    >
       <Toolbar disableGutters sx={styles.tool}>
         <Box display="flex" gap={1}>
           <img src="/shopping-cart.png" style={styles.img} />

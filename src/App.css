@@ -12,6 +12,10 @@ body {
 .greener {
   color: #255428;
 }
+.css-173mxzf-JoySelect-root {
+  color: black !important;
+  font-weight: 900 !important;
+}
 .transparent {
   background-color: transparent;
   color: transparent;
@@ -31,6 +35,11 @@ body {
 
 .weight * {
   font-weight: 500 !important;
+}
+.weight-first * {
+  font-weight: 500 !important;
+  color: rgb(72, 72, 72) !important;
+  font-size: 0.96rem !important;
 }
 .card-button:hover {
   color: white !important;
@@ -57,4 +66,9 @@ body {
 }
 .card-button:hover .doneIcon {
   color: white !important;
+}
+.badge > * {
+  /* background-color: red !important; */
+  color: white !important;
+  font-size: 0.6rem !important;
 }

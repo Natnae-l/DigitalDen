@@ -1,7 +1,7 @@
 import { Button, Grid, Typography } from "@mui/material";
-import PhoneIcon from "@mui/icons-material/Phone";
 import { Link } from "react-router-dom";
 import SelectInfo from "./components/SelectInfo";
+import { LiaPhoneSolid } from "react-icons/lia";
 
 function HeaderInfo() {
   const breakPoints = {
@@ -35,11 +35,11 @@ function HeaderInfo() {
         <Button
           style={{ paddingLeft: "2rem", fontSize: ".8rem" }}
           variant="text"
-          startIcon={<PhoneIcon />}
+          startIcon={<LiaPhoneSolid color="white" size={16} />}
           color="inherit"
           href="tel:+12345678"
         >
-          +12345678
+          +002345678
         </Button>
       </Grid>
       <Grid
