@@ -72,3 +72,18 @@ body {
   color: white !important;
   font-size: 0.6rem !important;
 }
+.base-Input-root.base--focused:focus-visible {
+  /* background-color: #065e1f !important; */
+  border: 0px solid transparent !important;
+}
+.dismantle * {
+  border: 1px solid transparent !important;
+  background-color: rgb(239, 239, 239);
+  font-size: 0.8rem !important;
+  padding: 3px 8px;
+  border-radius: 1rem;
+  color: black;
+}
+.dismantle .base--focused:focus-visible {
+  border: 1px solid red !important;
+}
