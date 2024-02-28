@@ -1,14 +1,14 @@
-import { Box, Typography } from "@mui/material";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Badge, Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { RxPerson } from "react-icons/rx";
 
 function Account() {
   return (
-    <Box display="flex" gap={2}>
+    <Box display="flex" gap={2.5}>
       <Link to="/" style={{ textDecoration: "none" }}>
         <Box display="flex" gap={0}>
-          <PersonOutlinedIcon sx={{ color: "black" }} />
+          <RxPerson size={20} color="black" style={{ marginInlineEnd: 3 }} />
           <Typography
             sx={{
               color: "black",
@@ -23,7 +23,10 @@ function Account() {
       </Link>
       <Link to="/" style={{ textDecoration: "none" }}>
         <Box display="flex" gap={0}>
-          <ShoppingCartOutlinedIcon sx={{ color: "black" }} />
+          <Badge badgeContent={5} sx={{ marginInlineEnd: 0.6 }}>
+            <MdOutlineAddShoppingCart size={20} color="black" />
+          </Badge>
+
           <Typography
             sx={{
               color: "black",
