@@ -3,12 +3,13 @@ import CardComponent from "./components/Card";
 import ItemReducer from "../../reducers/ItemReducer";
 import { useContext } from "react";
 import { ItemContext } from "../../context/Item/ItemContext";
+import DisplaySkeleton from "../Skeleton/DisplaySkeleton";
 
 function Items() {
   const { error, isLoading } = ItemReducer();
   const { headPhones } = useContext(ItemContext);
 
-  if (isLoading) return <div style={{ color: "black" }}>IsLoading</div>;
+  if (isLoading) return <DisplaySkeleton />;
   if (error)
     return (
       <div style={{ color: "black" }}>
