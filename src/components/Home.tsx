@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import HeaderInfo from "./headerInfo/HeaderInfo";
 import Nav from "./Nav/Nav";
 import Advert from "./Advert/Advert";
-import UserContextProvider from "../context/Category/categoryContext.tsx";
+import UserContextProvider from "../context/Category/CategoryContext.tsx";
 import Filter from "../components/Filter/Filter";
 import Items from "./Items/Items";
 import ItemContextProvider from "../context/Item/ItemContext.tsx";

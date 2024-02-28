@@ -1,7 +1,7 @@
 import { Box, Grid } from "@mui/material";
 import { useLoaderData } from "react-router-dom";
 import { Category } from "../../loaders/homeLoader";
-import { CategoryContext } from "../../context/Category/categoryContext";
+import { CategoryContext } from "../../context/Category/CategoryContext";
 import { useContext } from "react";
 import CategoryItem from "../../components/Nav/components/CategoryItem";
 

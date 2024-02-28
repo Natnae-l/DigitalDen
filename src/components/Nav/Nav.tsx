@@ -7,7 +7,7 @@ import SearchBar from "./components/SearchBar";
 import Account from "./components/Account";
 import { Category } from "../../loaders/homeLoader";
 import { useContext } from "react";
-import { CategoryContext } from "../../context/Category/categoryContext";
+import { CategoryContext } from "../../context/Category/CategoryContext";
 
 const useStyles = () => {
   return {
