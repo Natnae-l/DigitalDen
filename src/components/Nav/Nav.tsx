@@ -8,6 +8,7 @@ import Account from "./components/Account";
 import { Category } from "../../loaders/homeLoader";
 import { useContext } from "react";
 import { CategoryContext } from "../../context/Category/CategoryContext";
+import ShopCart from "../Shop/Cart/ShopCart";
 
 const useStyles = () => {
   return {
@@ -41,6 +42,7 @@ export default function Nav() {
       className="weight-first"
     >
       <Toolbar disableGutters sx={styles.tool}>
+        <ShopCart />
         <Box display="flex" gap={1}>
           <img src="/shopping-cart.png" style={styles.img} />
           <Typography variant="h4" sx={styles.shop} fontSize={28}>

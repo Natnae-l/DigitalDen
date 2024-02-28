@@ -6,6 +6,7 @@ import UserContextProvider from "../context/Category/CategoryContext.tsx";
 import Filter from "../components/Filter/Filter";
 import Items from "./Items/Items";
 import ItemContextProvider from "../context/Item/ItemContext.tsx";
+import CartContextProvider from "../context/Cart/CartContextProvider.tsx";
 
 function Home() {
   return (
@@ -14,7 +15,9 @@ function Home() {
         <ItemContextProvider>
           <HeaderInfo />
           <Grid width="85%" margin="0 auto">
-            <Nav />
+            <CartContextProvider>
+              <Nav />
+            </CartContextProvider>
             <Advert />
             <Filter />
             <Items />
