@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { ItemContext } from "../context/Item/ItemContext";
+import { ItemContext, ItemContextType } from "../context/Item/ItemContext";
 
 function ItemReducer() {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const { setHeadPhones } = useContext(ItemContext);
+  const { setHeadPhones } = useContext(ItemContext) as ItemContextType;
 
   useEffect(() => {
     fetch("https://digitalden-backend.onrender.com")

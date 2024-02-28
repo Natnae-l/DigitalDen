@@ -1,13 +1,13 @@
 import { Grid, Typography } from "@mui/material";
-import CardComponent from "./components/Card";
+import CardComponent, { headPhone } from "./components/Card";
 import ItemReducer from "../../reducers/ItemReducer";
 import { useContext } from "react";
-import { ItemContext } from "../../context/Item/ItemContext";
+import { ItemContext, ItemContextType } from "../../context/Item/ItemContext";
 import DisplaySkeleton from "../Skeleton/DisplaySkeleton";
 
 function Items() {
   const { error, isLoading } = ItemReducer();
-  const { headPhones } = useContext(ItemContext);
+  const { headPhones } = useContext(ItemContext) as ItemContextType;
 
   if (isLoading) return <DisplaySkeleton />;
   if (error)
@@ -31,7 +31,7 @@ function Items() {
         HeadPhones for you!
       </Typography>
       <Grid container gap={2.4}>
-        {headPhones.map((item, index) => (
+        {headPhones.map((item: headPhone, index: number) => (
           <Grid key={index} item lg={2.835} sm={6} xs={12}>
             <CardComponent
               name={item.name}
