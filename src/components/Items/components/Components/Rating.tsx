@@ -17,6 +17,7 @@ export default function BasicRating() {
         sx={{}}
         onChange={(event, newValue) => {
           setValue(newValue);
+          console.log(event);
         }}
       />
     </Box>
