@@ -1,12 +1,10 @@
 import { Grid } from "@mui/material";
 import HeaderInfo from "./headerInfo/HeaderInfo";
 import Nav from "./Nav/Nav";
-import Advert from "./Advert/Advert";
 import UserContextProvider from "../context/Category/CategoryContext.tsx";
-import Filter from "../components/Filter/Filter";
-import Items from "./Items/Items";
 import ItemContextProvider from "../context/Item/ItemContext.tsx";
 import CartContextProvider from "../context/Cart/CartContextProvider.tsx";
+import { Outlet } from "react-router-dom";
 
 function Home() {
   return (
@@ -18,9 +16,7 @@ function Home() {
             <CartContextProvider>
               <Nav />
             </CartContextProvider>
-            <Advert />
-            <Filter />
-            <Items />
+            <Outlet />
           </Grid>
         </ItemContextProvider>
       </UserContextProvider>

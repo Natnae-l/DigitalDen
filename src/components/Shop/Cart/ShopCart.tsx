@@ -1,25 +1,12 @@
-import Dialog from "@mui/material/Dialog";
-import Slide from "@mui/material/Slide";
-import { TransitionProps } from "@mui/material/transitions";
-import { forwardRef, useContext } from "react";
+import { useContext } from "react";
 import CartContext, {
   CartContextType,
 } from "../../../context/Cart/CartContext";
 import { MdCloseFullscreen } from "react-icons/md";
-
-const Transition = forwardRef(function Transition(
-  props: TransitionProps & {
-    children: React.ReactElement;
-  },
-  ref: React.Ref<unknown>
-) {
-  return <Slide direction="down" ref={ref} {...props} />;
-});
+import { Container } from "@mui/material";
 
 export default function FullScreenDialog() {
-  const { openDialog, setOpenDialog } = useContext(
-    CartContext
-  ) as CartContextType;
+  const { setOpenDialog } = useContext(CartContext) as CartContextType;
 
   const handleClose = () => {
     setOpenDialog(false);
@@ -27,18 +14,14 @@ export default function FullScreenDialog() {
 
   return (
     <>
-      <Dialog
-        // fullScreen
-        maxWidth="lg"
-        open={openDialog}
-        onClose={handleClose}
-        // TransitionComponent={Transition}
+      <Container
         sx={{
           ".css-1fu2e3p-MuiPaper-root-MuiDialog-paper": {
             borderRadius: ".5rem",
             padding: "20px 20px !important",
           },
         }}
+        className="cart-container"
       >
         <MdCloseFullscreen
           size="25"
@@ -65,7 +48,7 @@ export default function FullScreenDialog() {
           Saepe exercitationem porro tempore ipsa obcaecati reprehenderit
           laudantium, eos itaque blanditiis ad.
         </p>
-      </Dialog>
+      </Container>
     </>
   );
 }
