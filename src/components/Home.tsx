@@ -5,10 +5,8 @@ import UserContextProvider from "../context/Category/CategoryContext.tsx";
 import ItemContextProvider from "../context/Item/ItemContext.tsx";
 import CartContextProvider from "../context/Cart/CartContextProvider.tsx";
 import { Outlet } from "react-router-dom";
-import getCart from "../reducers/cartReducer.ts";
 
 function Home() {
-  getCart();
   return (
     <>
       <UserContextProvider>

@@ -1,6 +1,11 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DoneIcon from "@mui/icons-material/Done";
+import CartContext, {
+  CartContextType,
+} from "../../../../context/Cart/CartContext";
+import { ItemContext } from "../../../../context/Item/ItemContext";
+import { headPhone } from "../Card";
 
 interface Props {
   id: string;
@@ -8,11 +13,27 @@ interface Props {
 function AddToCart({ id }: Props) {
   const customStyle = useStyle();
   const [text, setText] = useState(false);
+  const { cart, setCart } = useContext(CartContext) as CartContextType;
+  const { headPhones } = useContext(ItemContext);
 
   let buttonText: string[] = ["Add to Cart", "Added"];
 
+  useEffect(() => {
+    if (cart.find((item) => item._id == id)) {
+      setText(true);
+    }
+  }, [cart]);
+
   const handleClick = () => {
     setText((prev) => !prev);
+    let getItem: headPhone = headPhones.find(
+      (item) => item._id == id
+    ) as headPhone;
+    let filterdItem = cart.filter((item) => item._id != id);
+    text ? setCart(filterdItem) : setCart([...cart, getItem]);
+
+    console.log(localStorage.getItem("cart"));
+    console.log(cart);
   };
 
   return (

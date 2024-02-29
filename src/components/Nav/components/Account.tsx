@@ -2,8 +2,14 @@ import { Badge, Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { RxPerson } from "react-icons/rx";
+import { useContext } from "react";
+import CartContext, {
+  CartContextType,
+} from "../../../context/Cart/CartContext";
 
 function Account() {
+  const { cart } = useContext(CartContext) as CartContextType;
+
   return (
     <Box display="flex" gap={2.5}>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -38,7 +44,7 @@ function Account() {
           }}
         >
           <Badge
-            badgeContent={5}
+            badgeContent={cart.length}
             sx={{ marginInlineEnd: 0.9 }}
             className="badge"
             color="secondary"
