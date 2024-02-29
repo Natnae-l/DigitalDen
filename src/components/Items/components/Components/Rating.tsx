@@ -9,7 +9,7 @@ export default function BasicRating() {
     <Box
       sx={{
         "& > legend": { mt: 2 },
-        color: "1b3e25",
+        color: "1b3e25 !important",
       }}
     >
       <Rating

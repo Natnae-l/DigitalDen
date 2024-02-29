@@ -84,3 +84,9 @@ body {
   border-radius: 1rem;
   color: black;
 }
+.cart-container h5 {
+  color: black;
+}
+header a {
+  text-decoration: none;
+}

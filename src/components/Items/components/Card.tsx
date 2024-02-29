@@ -9,6 +9,7 @@ import {
 import Rating from "./Components/Rating";
 import LikeButton from "./Components/LikeButton";
 import AddToCart from "./Components/AddToCart";
+import ShowPrice from "./Components/ShowPrice";
 
 export interface headPhone {
   // id: string;
@@ -34,11 +35,7 @@ function CardComponent({ name, price, description, image }: headPhone) {
       <CardContent sx={{ ...customStyle.cardContent }}>
         <Box style={{ ...customStyle.itemName }}>
           <Typography fontWeight={600}>{name}</Typography>
-          <Typography fontWeight={600}>
-            <span style={{ ...customStyle.currency }}>$</span>
-            {price}
-            <span style={{ ...customStyle.currency }}>.78</span>
-          </Typography>
+          <ShowPrice price={price} />
         </Box>
         <Typography className="material">{description}</Typography>
         <CardActions sx={{ ...customStyle.action }}>
