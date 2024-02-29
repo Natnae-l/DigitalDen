@@ -1,5 +1,4 @@
 import Dialog from "@mui/material/Dialog";
-import IconButton from "@mui/material/IconButton";
 import Slide from "@mui/material/Slide";
 import { TransitionProps } from "@mui/material/transitions";
 import { forwardRef, useContext } from "react";
@@ -29,26 +28,23 @@ export default function FullScreenDialog() {
   return (
     <>
       <Dialog
-        // fullWidth
+        // fullScreen
         maxWidth="lg"
         open={openDialog}
         onClose={handleClose}
-        TransitionComponent={Transition}
+        // TransitionComponent={Transition}
         sx={{
           ".css-1fu2e3p-MuiPaper-root-MuiDialog-paper": {
-            borderRadius: "1.6rem",
-            padding: "10px 20px",
+            borderRadius: ".5rem",
+            padding: "20px 20px !important",
           },
         }}
       >
-        <IconButton
-          title="close"
+        <MdCloseFullscreen
+          size="25"
           onClick={handleClose}
-          aria-label="close"
-          sx={{ width: "100px", alignSelf: "end" }}
-        >
-          <MdCloseFullscreen />
-        </IconButton>
+          style={{ alignSelf: "end", cursor: "pointer" }}
+        />
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe id
           aliquid consequatur ea velit assumenda non officia debitis quam ut

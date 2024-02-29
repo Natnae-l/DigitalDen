@@ -84,6 +84,3 @@ body {
   border-radius: 1rem;
   color: black;
 }
-.dismantle .base--focused:focus-visible {
-  border: 1px solid red !important;
-}
