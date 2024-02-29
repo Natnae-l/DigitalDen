@@ -8,7 +8,6 @@ function CardSkeleton() {
         animation="pulse"
         sx={{ fontSize: "10rem" }}
       />
-      <Skeleton variant="text" animation="pulse" sx={{ fontSize: "1rem" }} />
       <Skeleton
         variant="text"
         animation="pulse"

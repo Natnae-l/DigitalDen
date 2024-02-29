@@ -12,9 +12,8 @@ import AddToCart from "./Components/AddToCart";
 import ShowPrice from "./Components/ShowPrice";
 
 export interface headPhone {
-  // id: string;
+  _id: string;
   name: string;
-  // material: string;
   description: string;
   // category: string;
   price: number;
@@ -22,7 +21,7 @@ export interface headPhone {
   image: string;
 }
 
-function CardComponent({ name, price, description, image }: headPhone) {
+function CardComponent({ name, price, description, image, _id }: headPhone) {
   const customStyle = useStyle();
 
   return (
@@ -40,7 +39,7 @@ function CardComponent({ name, price, description, image }: headPhone) {
         <Typography className="material">{description}</Typography>
         <CardActions sx={{ ...customStyle.action }}>
           <Rating />
-          <AddToCart />
+          <AddToCart id={_id} />
         </CardActions>
       </CardContent>
     </Card>

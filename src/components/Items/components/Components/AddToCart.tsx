@@ -1,19 +1,34 @@
 import { Button } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import DoneIcon from "@mui/icons-material/Done";
+import { headPhone } from "../Card";
+import { ItemContext } from "../../../../context/Item/ItemContext";
 
-function AddToCart() {
+interface Props {
+  id: string;
+}
+function AddToCart({ id }: Props) {
+  const { headPhones } = useContext(ItemContext);
   const customStyle = useStyle();
   const [text, setText] = useState(false);
 
   let buttonText: string[] = ["Add to Cart", "Added"];
+
+  const handleClick = () => {
+    setText((prev) => !prev);
+    text
+      ? removeFromCarts(id)
+      : addtoCarts(headPhones.find((item) => item._id == id));
+
+    console.log(localStorage.getItem("cart"));
+  };
 
   return (
     <Button
       sx={{ ...customStyle.overWrite }}
       className="card-button"
       style={{ ...customStyle.styleButton }}
-      onClick={() => setText((prev) => !prev)}
+      onClick={handleClick}
       startIcon={text && <DoneIcon className="doneIcon" />}
     >
       {text ? buttonText[1] : buttonText[0]}
@@ -39,3 +54,19 @@ const useStyle = () => {
     },
   };
 };
+
+export function addtoCarts(headPhone: headPhone | undefined) {
+  let items = JSON.stringify([]);
+
+  if (!localStorage.getItem("cart")) localStorage.setItem("cart", items);
+  let storage = JSON.parse(localStorage.getItem("cart") || "error");
+  localStorage.setItem("cart", JSON.stringify([...storage, headPhone]));
+}
+export function removeFromCarts(id: string) {
+  let storage: headPhone[] = JSON.parse(
+    localStorage.getItem("cart") || "error"
+  );
+  let updatedStorage = JSON.stringify(storage.filter((item) => item._id != id));
+
+  localStorage.setItem("cart", updatedStorage);
+}

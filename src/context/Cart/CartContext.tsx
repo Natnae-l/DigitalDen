@@ -1,13 +1,14 @@
+import { headPhone } from "../../components/Items/components/Card";
 import { createContext } from "react";
 
 export type CartContextType = {
-  openDialog: boolean;
-  setOpenDialog: (prev: boolean) => void;
+  cart: headPhone[] | undefined;
+  setCart: (prev: headPhone[] | undefined) => void;
 };
 
 export const CartContext = createContext<CartContextType>({
-  openDialog: false,
-  setOpenDialog: () => {},
+  cart: undefined,
+  setCart: () => {},
 });
 
 export default CartContext;

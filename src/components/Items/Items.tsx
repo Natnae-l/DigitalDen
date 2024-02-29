@@ -38,6 +38,7 @@ function Items() {
               price={item.price}
               description={item.description}
               image={item.image}
+              _id={item._id}
             />
           </Grid>
         ))}
