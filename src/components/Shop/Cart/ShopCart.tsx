@@ -1,7 +1,3 @@
-import { useContext } from "react";
-import CartContext, {
-  CartContextType,
-} from "../../../context/Cart/CartContext";
 import { Box, Grid, Typography } from "@mui/material";
 
 import { TiArrowBackOutline } from "react-icons/ti";
@@ -10,12 +6,6 @@ import ShopCard from "./Components/ShopCard";
 import ShowPrice from "../../../components/Items/components/Components/ShowPrice";
 
 export default function FullScreenDialog() {
-  const { setOpenDialog } = useContext(CartContext) as CartContextType;
-
-  const handleClose = () => {
-    setOpenDialog(false);
-  };
-
   return (
     <>
       <Box className="cart-container" width="90%" margin="30px auto">
@@ -32,7 +22,6 @@ export default function FullScreenDialog() {
           <Link to="/">
             <TiArrowBackOutline
               size="25"
-              onClick={handleClose}
               style={{ alignSelf: "end", cursor: "pointer" }}
             />
           </Link>

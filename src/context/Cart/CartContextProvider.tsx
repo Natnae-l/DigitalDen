@@ -7,7 +7,7 @@ type CategoryContextProviderProps = {
 };
 
 const CartContextProvider = ({ children }: CategoryContextProviderProps) => {
-  const [cart, setCart] = useState<headPhone[] | undefined>();
+  const [cart, setCart] = useState<headPhone[] | []>([]);
   return (
     <CategoryContext.Provider value={{ cart, setCart }}>
       {children}
