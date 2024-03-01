@@ -23,9 +23,6 @@ function AddToCart({ id }: Props) {
       setText(true);
     }
   }, []);
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
   async function handleClick() {
     if (!text) {
       let getItem: headPhone = headPhones.find(

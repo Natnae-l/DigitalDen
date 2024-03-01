@@ -12,6 +12,10 @@ function Items() {
   const { setCart, cart } = useContext(CartContext) as CartContextType;
 
   useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  useEffect(() => {
     if (cart.length == 0) {
       let storage: headPhone[] = JSON.parse(
         localStorage.getItem("cart") || "[]"
@@ -50,6 +54,7 @@ function Items() {
               description={item.description}
               image={item.image}
               _id={item._id}
+              rating={item.rating}
             />
           </Grid>
         ))}

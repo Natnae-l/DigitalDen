@@ -9,6 +9,8 @@ import {
 import Rating from "../../../Items/components/Components/Rating";
 import ShowPrice from "../../../../components/Items/components/Components/ShowPrice";
 import { MdOutlineDelete } from "react-icons/md";
+import { useContext } from "react";
+import CartContext from "../../../../context/Cart/CartContext";
 // img name rating price
 
 interface Props {
@@ -21,6 +23,11 @@ interface Props {
 
 function ShopCard({ name, id, price, img }: Props) {
   const customStyle = useStyle();
+  const { cart, setCart } = useContext(CartContext);
+
+  const handleDelete = () => {
+    setCart([...cart.filter((item) => item._id != id)]);
+  };
 
   return (
     <Grid item xs={12} key={id}>
@@ -50,7 +57,7 @@ function ShopCard({ name, id, price, img }: Props) {
             },
           }}
         >
-          <MdOutlineDelete size={20} />
+          <MdOutlineDelete size={20} onClick={handleDelete} />
         </CardActions>
       </Card>
     </Grid>
