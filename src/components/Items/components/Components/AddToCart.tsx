@@ -14,7 +14,7 @@ function AddToCart({ id }: Props) {
   const customStyle = useStyle();
   const [text, setText] = useState(false);
   const { cart, setCart } = useContext(CartContext) as CartContextType;
-  const { headPhones } = useContext(ItemContext);
+  const { item } = useContext(ItemContext);
 
   let buttonText: string[] = ["Add to Cart", "Added"];
 
@@ -25,9 +25,7 @@ function AddToCart({ id }: Props) {
   }, []);
   async function handleClick() {
     if (!text) {
-      let getItem: headPhone = headPhones.find(
-        (item) => item._id == id
-      ) as headPhone;
+      let getItem: headPhone = item.find((item) => item._id == id) as headPhone;
 
       setCart([...cart, { ...getItem }]);
       setText((prev) => !prev);

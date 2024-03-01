@@ -8,7 +8,7 @@ import CartContext, { CartContextType } from "../../context/Cart/CartContext";
 
 function Items() {
   const { error, isLoading } = ItemReducer();
-  const { headPhones } = useContext(ItemContext) as ItemContextType;
+  const { item } = useContext(ItemContext) as ItemContextType;
   const { setCart, cart } = useContext(CartContext) as CartContextType;
 
   useEffect(() => {
@@ -46,7 +46,7 @@ function Items() {
         HeadPhones for you!
       </Typography>
       <Grid container gap={2.4}>
-        {headPhones.map((item: headPhone, index: number) => (
+        {item.map((item: headPhone, index: number) => (
           <Grid key={index} item lg={2.835} sm={6} xs={12}>
             <CardComponent
               name={item.name}

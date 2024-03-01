@@ -5,13 +5,13 @@ function ItemReducer() {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  const { setHeadPhones } = useContext(ItemContext) as ItemContextType;
+  const { setItem } = useContext(ItemContext) as ItemContextType;
 
   useEffect(() => {
     fetch("https://digitalden-backend.onrender.com")
       .then((res) => res.json())
       .then((data) => {
-        setHeadPhones(data);
+        setItem(data);
         setIsLoading(false);
       })
       .catch((err) => {
