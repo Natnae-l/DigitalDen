@@ -5,7 +5,7 @@ import CategoryItem from "./components/CategoryItem";
 import { Link, useLoaderData } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import Account from "./components/Account";
-import { Category } from "../../Loaders/homeLoader";
+import { Category } from "../../loaders/homeLoader";
 import { useContext } from "react";
 import { CategoryContext } from "../../context/Category/CategoryContext";
 

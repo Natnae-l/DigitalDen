@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home";
-import homeLoader from "./Loaders/homeLoader";
+import homeLoader from "./loaders/homeLoader";
 import Error from "./components/Error";
 import ShopCart from "./components/Shop/Cart/ShopCart";
 import FirstPage from "./components/FirstPage";
