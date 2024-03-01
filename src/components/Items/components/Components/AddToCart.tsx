@@ -23,8 +23,10 @@ function AddToCart({ id }: Props) {
       setText(true);
     }
   }, []);
-
-  const handleClick = () => {
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+  async function handleClick() {
     if (!text) {
       let getItem: headPhone = headPhones.find(
         (item) => item._id == id
@@ -32,13 +34,13 @@ function AddToCart({ id }: Props) {
 
       setCart([...cart, { ...getItem }]);
       setText((prev) => !prev);
-      localStorage.setItem("cart", JSON.stringify(cart));
     } else {
       setCart([...cart.filter((item) => item._id != id)]);
+      console.log(JSON.parse(localStorage.getItem("cart") || ""));
+
       setText((prev) => !prev);
-      localStorage.setItem("cart", JSON.stringify(cart));
     }
-  };
+  }
 
   return (
     <Button

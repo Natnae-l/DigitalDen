@@ -1,11 +1,14 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, IconButton, Typography } from "@mui/material";
 
 import { TiArrowBackOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import ShopCard from "./Components/ShopCard";
 import ShowPrice from "../../../components/Items/components/Components/ShowPrice";
+import { useContext } from "react";
+import CartContext from "../../../context/Cart/CartContext";
 
 export default function FullScreenDialog() {
+  const { cart } = useContext(CartContext);
   return (
     <>
       <Box className="cart-container" width="90%" margin="30px auto">
@@ -20,10 +23,12 @@ export default function FullScreenDialog() {
             My Cart
           </Typography>
           <Link to="/">
-            <TiArrowBackOutline
-              size="25"
-              style={{ alignSelf: "end", cursor: "pointer" }}
-            />
+            <IconButton>
+              <TiArrowBackOutline
+                size="25"
+                style={{ alignSelf: "end", cursor: "pointer" }}
+              />
+            </IconButton>
           </Link>
         </Box>
         <Grid container marginBlock={4.5} gap={3}>
@@ -42,7 +47,13 @@ export default function FullScreenDialog() {
               </Typography>
 
               <Typography variant="h5" fontWeight={300}>
-                <ShowPrice />
+                <ShowPrice
+                  price={
+                    cart.length == 0
+                      ? 0
+                      : cart.reduce((acc, item) => acc + item.price, 0)
+                  }
+                />
               </Typography>
               <Typography variant="h5" fontWeight={300}>
                 Order Now

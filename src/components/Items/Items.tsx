@@ -9,11 +9,15 @@ import CartContext, { CartContextType } from "../../context/Cart/CartContext";
 function Items() {
   const { error, isLoading } = ItemReducer();
   const { headPhones } = useContext(ItemContext) as ItemContextType;
-  const { setCart } = useContext(CartContext) as CartContextType;
+  const { setCart, cart } = useContext(CartContext) as CartContextType;
 
   useEffect(() => {
-    let storage: headPhone[] = JSON.parse(localStorage.getItem("cart") || "[]");
-    setCart([...storage]);
+    if (cart.length == 0) {
+      let storage: headPhone[] = JSON.parse(
+        localStorage.getItem("cart") || "[]"
+      );
+      setCart([...storage]);
+    }
   }, []);
 
   if (isLoading) return <DisplaySkeleton />;
