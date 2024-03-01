@@ -7,7 +7,10 @@ import SearchBar from "./components/SearchBar";
 import Account from "./components/Account";
 import { Category } from "../../loaders/homeLoader";
 import { useContext } from "react";
-import { CategoryContext } from "../../context/Category/CategoryContext";
+import {
+  CategoryContextType,
+  CategoryContext,
+} from "../../context/Category/CategoryContext";
 
 const useStyles = () => {
   return {
@@ -29,7 +32,7 @@ const useStyles = () => {
 export default function Nav() {
   const styles = useStyles();
   const { Category } = useLoaderData() as Category;
-  const { setCategory } = useContext(CategoryContext);
+  const { setCategory } = useContext(CategoryContext) as CategoryContextType;
 
   return (
     <AppBar
