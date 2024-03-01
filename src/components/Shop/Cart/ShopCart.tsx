@@ -32,8 +32,14 @@ export default function FullScreenDialog() {
           </Link>
         </Box>
         <Grid container marginBlock={4.5} gap={3}>
-          {[1, 2].map((item) => (
-            <ShopCard key={item} />
+          {cart.map((item) => (
+            <ShopCard
+              id={item._id}
+              price={item.price}
+              name={item.name}
+              rating={item.rating}
+              img={item.image}
+            />
           ))}
           <Grid item xs={12}>
             <Box

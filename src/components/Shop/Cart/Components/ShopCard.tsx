@@ -11,28 +11,36 @@ import ShowPrice from "../../../../components/Items/components/Components/ShowPr
 import { MdOutlineDelete } from "react-icons/md";
 // img name rating price
 
-function ShopCard() {
+interface Props {
+  name: string;
+  id: string;
+  rating: number;
+  price: number;
+  img: string;
+}
+
+function ShopCard({ name, id, price, img }: Props) {
   const customStyle = useStyle();
 
   return (
-    <Grid item xs={12}>
+    <Grid item xs={12} key={id}>
       <Card sx={{ ...customStyle.card }}>
         <CardMedia
           component="img"
           height={100}
           sx={{ ...customStyle.img }}
-          src="https://res.cloudinary.com/dbkumr8wm/image/upload/v1708858747/zzq1j9dghznovzxcmk0s.jpg"
+          src={img}
         />
         <CardContent>
           <Typography sx={{ ...customStyle.text }} variant="h5" gutterBottom>
-            Word of the Day
+            {name}
           </Typography>
         </CardContent>
         <CardContent>
           <Rating />
         </CardContent>
         <CardContent>
-          <ShowPrice />
+          <ShowPrice price={price} />
         </CardContent>
         <CardActions
           sx={{
@@ -63,7 +71,9 @@ const useStyle = () => {
     },
     text: {
       color: "black",
-      fontFamily: "Anta !important",
+      // fontFamily: "Anta !important",
+      fontSize: "1.2rem",
+      fontWeight: "500",
     },
   };
 };
