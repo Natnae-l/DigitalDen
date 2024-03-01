@@ -16,14 +16,6 @@ function Items() {
       localStorage.setItem("cart", JSON.stringify(cart));
     }
   }, [cart]);
-  useEffect(() => {
-    if (cart.length == 0) {
-      let storage: headPhone[] = JSON.parse(
-        localStorage.getItem("cart") || "[]"
-      );
-      setCart([...storage]);
-    }
-  }, []);
 
   if (isLoading) return <DisplaySkeleton />;
   if (error)
