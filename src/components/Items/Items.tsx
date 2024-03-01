@@ -9,7 +9,7 @@ import CartContext, { CartContextType } from "../../context/Cart/CartContext";
 function Items() {
   const { error, isLoading } = ItemReducer();
   const { item } = useContext(ItemContext) as ItemContextType;
-  const { setCart, cart } = useContext(CartContext) as CartContextType;
+  const { cart } = useContext(CartContext) as CartContextType;
 
   useEffect(() => {
     if (cart.length > 0) {
