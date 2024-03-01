@@ -9,7 +9,7 @@ interface Props {
 function SelectInfo({ label, value, minWidth }: Props) {
   return (
     <FormControl sx={{ m: 1, minWidth: { minWidth } }} size="small">
-      <InputLabel sx={{ color: "white", fontSize: ".7rem" }}>
+      <InputLabel sx={{ color: "white", fontSize: ".6rem" }}>
         {label}
       </InputLabel>
       <Select
@@ -19,7 +19,7 @@ function SelectInfo({ label, value, minWidth }: Props) {
         value={value}
         sx={{
           color: "white",
-          fontSize: ".7rem",
+          fontSize: ".5rem",
           ".MuiOutlinedInput-notchedOutline": {
             borderColor: "rgba(228, 219, 233, 0.25)",
           },

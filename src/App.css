@@ -6,10 +6,11 @@ body {
 * {
   font-family: Poppins, sans-serif !important;
 }
+header .green,
 .green {
-  color: rgb(17, 94, 17);
+  color: rgb(15, 92, 15) !important;
 }
-.greener {
+header .greener {
   color: #255428;
 }
 .css-173mxzf-JoySelect-root {

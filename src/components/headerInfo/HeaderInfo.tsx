@@ -33,9 +33,9 @@ function HeaderInfo() {
         alignItems="center"
       >
         <Button
-          style={{ paddingLeft: "2rem", fontSize: ".8rem" }}
+          style={{ paddingLeft: "2rem", fontSize: ".7rem" }}
           variant="text"
-          startIcon={<LiaPhoneSolid color="white" size={16} />}
+          startIcon={<LiaPhoneSolid color="white" size={15} />}
           color="inherit"
           href="tel:+12345678"
         >
@@ -61,7 +61,7 @@ function HeaderInfo() {
             component="h3"
             sx={{
               color: "rgb(240, 239, 239)",
-              fontSize: ".8rem",
+              fontSize: ".7rem",
               "MuiGrid-item": {
                 paddingLeft: 0,
               },

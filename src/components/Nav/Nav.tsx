@@ -17,8 +17,6 @@ const useStyles = () => {
     shop: {
       fontWeight: "600 !important",
       fontSize: "1.8rem !important",
-      color: "#1b1e10",
-      fontFamily: "Anta, sans-serif !important",
     },
     tool: {
       display: "flex",
@@ -43,7 +41,12 @@ export default function Nav() {
       <Toolbar disableGutters sx={styles.tool}>
         <Box display="flex" gap={1}>
           <img src="/shopping-cart.png" style={styles.img} />
-          <Typography variant="h4" sx={styles.shop} fontSize={28}>
+          <Typography
+            variant="h4"
+            className="green"
+            sx={styles.shop}
+            fontSize={28}
+          >
             ShopCart
           </Typography>
         </Box>
