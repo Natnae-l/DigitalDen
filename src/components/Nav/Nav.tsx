@@ -5,7 +5,7 @@ import CategoryItem from "./components/CategoryItem";
 import { Link, useLoaderData } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import Account from "./components/Account";
-import { Category } from "../../loaders/homeLoader";
+import { Category } from "../../Loaders/homeLoader";
 import { useContext } from "react";
 import { CategoryContext } from "../../context/Category/CategoryContext";
 
@@ -16,7 +16,7 @@ const useStyles = () => {
     },
     shop: {
       fontWeight: "600 !important",
-      fontSize: "1.8rem !important",
+      fontSize: "1.6rem !important",
     },
     tool: {
       display: "flex",
@@ -41,13 +41,8 @@ export default function Nav() {
       <Toolbar disableGutters sx={styles.tool}>
         <Box display="flex" gap={1}>
           <img src="/shopping-cart.png" style={styles.img} />
-          <Typography
-            variant="h4"
-            className="green"
-            sx={styles.shop}
-            fontSize={28}
-          >
-            ShopCart
+          <Typography variant="h5" className="green" sx={styles.shop}>
+            Shopcart
           </Typography>
         </Box>
         <CategoryItem

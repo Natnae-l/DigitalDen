@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import CardComponent, { headPhone } from "./components/Card";
-import ItemReducer from "../../reducers/ItemReducer";
+import ItemReducer from "../../Reducers/ItemReducer";
 import { useContext, useEffect } from "react";
 import { ItemContext, ItemContextType } from "../../context/Item/ItemContext";
 import DisplaySkeleton from "../Skeleton/DisplaySkeleton";
