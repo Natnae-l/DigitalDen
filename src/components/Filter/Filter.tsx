@@ -1,6 +1,4 @@
 import { Box, Grid } from "@mui/material";
-import { useLoaderData } from "react-router-dom";
-import { Category } from "../../loaders/homeLoader";
 import {
   CategoryContext,
   CategoryContextType,
@@ -9,7 +7,6 @@ import { useContext } from "react";
 import CategoryItem from "../../components/Nav/components/CategoryItem";
 
 function Filter() {
-  const { Category } = useLoaderData() as Category;
   const { setCategory } = useContext(CategoryContext) as CategoryContextType;
   return (
     <Grid container marginBlock={4} className="weight">
@@ -20,7 +17,7 @@ function Filter() {
               <CategoryItem
                 key={item}
                 categoryName="Category"
-                categories={Category}
+                categories={["First", "second", "third"]}
                 setSelectedContext={setCategory}
                 variant={true}
                 sizeCate="sm"

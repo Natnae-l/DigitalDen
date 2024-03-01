@@ -1,4 +1,4 @@
-import { Filter } from "@mui/icons-material";
+import Filter from "./Filter/Filter";
 import Advert from "./Advert/Advert";
 import Items from "./Items/Items";
 
