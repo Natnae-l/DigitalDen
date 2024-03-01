@@ -5,12 +5,14 @@ interface Props {
 }
 
 function ShowPrice({ price }: Props) {
+  let partitions = String(price).split(".");
+
   const customStyle = useStyle();
   return (
     <Typography fontWeight={600}>
       <span style={{ ...customStyle.currency }}>$</span>
-      {price || "289"}
-      <span style={{ ...customStyle.currency }}>.78</span>
+      {partitions[0]}
+      <span style={{ ...customStyle.currency }}>{partitions[1]}</span>
     </Typography>
   );
 }
