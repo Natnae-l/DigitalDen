@@ -22,18 +22,22 @@ function AddToCart({ id }: Props) {
     if (cart.find((item) => item._id == id)) {
       setText(true);
     }
-  }, [cart]);
+  }, []);
 
   const handleClick = () => {
-    setText((prev) => !prev);
-    let getItem: headPhone = headPhones.find(
-      (item) => item._id == id
-    ) as headPhone;
-    let filterdItem = cart.filter((item) => item._id != id);
-    text ? setCart(filterdItem) : setCart([...cart, getItem]);
+    if (!text) {
+      let getItem: headPhone = headPhones.find(
+        (item) => item._id == id
+      ) as headPhone;
 
-    console.log(localStorage.getItem("cart"));
-    console.log(cart);
+      setCart([...cart, { ...getItem }]);
+      setText((prev) => !prev);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    } else {
+      setCart([...cart.filter((item) => item._id != id)]);
+      setText((prev) => !prev);
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
   };
 
   return (

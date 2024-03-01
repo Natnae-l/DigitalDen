@@ -44,7 +44,7 @@ function Account() {
           }}
         >
           <Badge
-            badgeContent={cart.length}
+            badgeContent={cart.length ? cart.length : "0"}
             sx={{ marginInlineEnd: 0.9 }}
             className="badge"
             color="secondary"

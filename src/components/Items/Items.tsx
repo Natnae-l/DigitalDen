@@ -12,15 +12,8 @@ function Items() {
   const { setCart } = useContext(CartContext) as CartContextType;
 
   useEffect(() => {
-    let items = JSON.stringify([]);
-    if (!localStorage.getItem("cart")) {
-      localStorage.setItem("cart", items);
-    } else {
-      let storage: headPhone[] = JSON.parse(
-        localStorage.getItem("cart") || "[]"
-      );
-      setCart([...storage]);
-    }
+    let storage: headPhone[] = JSON.parse(localStorage.getItem("cart") || "[]");
+    setCart([...storage]);
   }, []);
 
   if (isLoading) return <DisplaySkeleton />;
