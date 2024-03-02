@@ -1,16 +1,14 @@
 import { Grid, Typography } from "@mui/material";
 import CardComponent, { headPhone } from "./components/Card";
-import ItemReducer from "../../reducers/ItemReducer";
-import { useContext } from "react";
-import { ItemContext, ItemContextType } from "../../context/Item/ItemContext";
 import DisplaySkeleton from "../Skeleton/DisplaySkeleton";
-// import CartContext, { CartContextType } from "../../context/Cart/CartContext";
 
-function Items() {
-  const { error, isLoading } = ItemReducer();
-  const { item } = useContext(ItemContext) as ItemContextType;
-  // const { cart } = useContext(CartContext) as CartContextType;
+interface Props {
+  error: boolean;
+  isLoading: boolean;
+  item: headPhone[] | [];
+}
 
+function Items({ error, isLoading, item }: Props) {
   if (isLoading) return <DisplaySkeleton />;
   if (error)
     return (
