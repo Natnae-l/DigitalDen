@@ -1,21 +1,15 @@
 import { Grid, Typography } from "@mui/material";
 import CardComponent, { headPhone } from "./components/Card";
 import ItemReducer from "../../reducers/ItemReducer";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ItemContext, ItemContextType } from "../../context/Item/ItemContext";
 import DisplaySkeleton from "../Skeleton/DisplaySkeleton";
-import CartContext, { CartContextType } from "../../context/Cart/CartContext";
+// import CartContext, { CartContextType } from "../../context/Cart/CartContext";
 
 function Items() {
   const { error, isLoading } = ItemReducer();
   const { item } = useContext(ItemContext) as ItemContextType;
-  const { cart } = useContext(CartContext) as CartContextType;
-
-  useEffect(() => {
-    if (cart.length > 0) {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
-  }, [cart]);
+  // const { cart } = useContext(CartContext) as CartContextType;
 
   if (isLoading) return <DisplaySkeleton />;
   if (error)
