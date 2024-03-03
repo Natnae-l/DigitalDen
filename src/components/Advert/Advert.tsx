@@ -44,9 +44,10 @@ function Advert() {
       </Grid>
       <Grid item container xs={6} justifyContent="center">
         <img
-          src="/headphones-375341_640.png"
+          // src="/headphones-375341_640.png"
+          src="/Screenshot 2024-02-22 155443.png"
           alt=""
-          style={{ width: "130px", transform: "rotate(2deg)" }}
+          style={{ width: "470px", transform: "rotate(0deg)" }}
         />
       </Grid>
     </Grid>
