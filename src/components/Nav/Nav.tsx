@@ -2,10 +2,9 @@ import { Box, Typography } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import CategoryItem from "./components/CategoryItem";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import Account from "./components/Account";
-import { Category } from "../../loaders/homeLoader";
 import { useContext } from "react";
 import {
   CategoryContextType,
@@ -31,7 +30,6 @@ const useStyles = () => {
 
 export default function Nav() {
   const styles = useStyles();
-  const { Category } = useLoaderData() as Category;
   const { setCategory } = useContext(CategoryContext) as CategoryContextType;
 
   return (
@@ -50,7 +48,7 @@ export default function Nav() {
         </Box>
         <CategoryItem
           categoryName="Category"
-          categories={Category}
+          categories={["Headphones", "Computers"]}
           setSelectedContext={setCategory}
           sizeCate="md"
         />
