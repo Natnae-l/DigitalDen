@@ -11,8 +11,8 @@ DigitalDen is an e-commerce platform under development, focusing on the sale of 
 
 - Back-End:
   - MongoDB
-  - Node.js
-  - Express
+  - NodeJS
+  - ExpressJS
   - Cloudinary (for storing images and video files)
 
 ## Features (Work in Progress):
