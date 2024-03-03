@@ -38,6 +38,6 @@ DigitalDen is an e-commerce platform under development, focusing on the sale of 
 Contributions to DigitalDen are welcomed! If you wish to contribute, feel free to fork the repository and submit a pull request with your modifications.
 
 ## License:
-This project is licensed under the MIT License. For more information, refer to the [LICENSE](./LICENSE) file.
+This project is licensed under the MIT License.
 
 ---
